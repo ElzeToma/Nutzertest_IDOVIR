@@ -69,21 +69,43 @@
              text-align: left; /* Setze den Text linksbündig */
              line-height:25px;
         }
+        
         img {
             border-radius: 15px;
         }
+       
+        #progress-barBG {
+            width: 100%;
+            /*background-color: #ddd;*/
+            margin-top: 20px;
+            /*border-radius: 15px;*/
+            position: relative;
+            overflow: hidden; /* Verhindert, dass der Text aus dem Container herausragt */
+            display: flex; /* Verwendet Flexbox für das Layout */
+            align-items: center; /*prozentzahl und progress-bar vertikal zentriert*/
+        }
+
         #progress-bar {
             height: 5px;
             background-color: #005EB8;
             border-radius: 15px;
         }
-        #progress-barBG {
-            width: 100%; 
+
+        #gray-bar {
+            height: 100%;
+            width: 100%;
             background-color: #ddd;
-            margin-top: 20px;
-            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
 
+        .progress-text {
+            color: #005EB8;
+            font-weight: bold;
+            margin-right: 10px; /* Fügt einen Abstand zwischen dem Balken und dem Text hinzu */
+        }
     </style>
 </head>
 
@@ -129,7 +151,8 @@
         <button id="next-btn" onclick="nextTask(1)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
-            <div id="progress-bar" style= "width: 7%;"></div> <!-- der blaue Balken der Process-Bar-->
+            <div class="progress-text">7%</div>
+            <div id="progress-bar" style= "width: 7%;"></div> <!-- der blaue Balken der Process-Bar-->   
         </div>
     </div>
 
@@ -144,6 +167,8 @@
         <button id="next-btn" onclick="nextTask(2)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">14%</div>
+            <div id="gray-bar"></div>
             <div id="progress-bar" style= "width: 14%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -161,6 +186,7 @@
         <button id="next-btn" onclick="nextTask(3)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">21%</div>
             <div id="progress-bar" style= "width: 21%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -180,6 +206,7 @@
         <button id="next-btn" onclick="nextTask(4)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">28%</div>
             <div id="progress-bar" style= "width: 28%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -200,6 +227,7 @@
         <button id="next-btn" onclick="nextTask(5)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">35%</div>
             <div id="progress-bar" style= "width: 35%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -222,6 +250,7 @@
         <button id="next-btn" onclick="nextTask(6)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">42%</div>
             <div id="progress-bar" style= "width: 42%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -237,6 +266,7 @@
         <button id="next-btn" onclick="nextTask(7)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">49%</div>
             <div id="progress-bar" style= "width: 49%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -252,6 +282,7 @@
         <button id="next-btn" onclick="nextTask(8)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">56%</div>
             <div id="progress-bar" style= "width: 56%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -269,6 +300,7 @@
         <button id="next-btn" onclick="nextTask(9)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">63%</div>
             <div id="progress-bar" style= "width: 63%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -285,6 +317,7 @@
         <button id="next-btn" onclick="nextTask(10)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">70%</div>
             <div id="progress-bar" style= "width: 70%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -299,6 +332,7 @@
         <button id="next-btn" onclick="nextTask(11)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">77%</div>
             <div id="progress-bar" style= "width: 77%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -316,6 +350,7 @@
         <button id="next-btn" onclick="nextTask(12)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">84%</div>
             <div id="progress-bar" style= "width: 84%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -330,6 +365,7 @@
         <button id="next-btn" onclick="nextTask(13)">Weiter</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">91%</div>
             <div id="progress-bar" style= "width: 91%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
@@ -343,11 +379,11 @@
             <a href="https://forms.gle/aXKVcsTXmt6PSJor5" target="_blank">Link zur Umfrage</a> 
             und beantworten Sie die Fragen.<br><br>
             Vielen Dank für Ihre Mitarbeit!
-
         </p>
         <button id="back-btn" onclick="previousTask(14)">Zurück</button>
 
         <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div class="progress-text">100%</div>
             <div id="progress-bar" style= "width: 100%;"></div> <!-- der blaue Balken der Process-Bar-->
         </div>
     </div>
