@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgaben zum Kennenlernen der Plattform IDOVIR</title>
+    <style>
+        body {
+            font-family: 'Aptos', sans-serif;
+            background-color: #e6f7ff; /* Hellbläuliche Hintergrundfarbe */
+            color: #333; /* Dunkler Text */
+            margin: 20px; /* Abstand zu den Rändern des Browserfensters */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Oben ausgerichtet */
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .task {
+            background-color: #fff; /* Weißer Hintergrund für Aufgaben */
+            padding: 20px 40px 20px 40px;
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für Aufgaben */
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto; /* Zentriert mit Abstand zu den Seiten */
+        }
+
+        button {
+            padding: 15px 30px; /* Größere Polsterung für den Button */
+            margin-top: 15px;
+            border: none;
+            border-radius: 15px; /* Abgerundete Ecken */
+            cursor: pointer;
+            font-family: 'Aptos', sans-serif;
+            font-size: 16px; /* Größere Schriftgröße */
+        }
+
+        #back-btn {
+            background-color: transparent; /* Transparenter Hintergrund für Zurück-Button */
+            color: #008CBA; /* Blauer Text */
+            margin-right: 10px;
+        }
+
+        #next-btn {
+            background-color: #008CBA; /* Blauer Hintergrund für Weiter-Button */
+            color: #fff; /* Weißer Text */
+            margin-left: 10px;
+        }
+
+        #start-btn {
+            background-color: #ff6600; /* Prominente Farbe für Start-Button */
+            color: #fff;
+        }
+
+        #finish {
+            color: #008CBA;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        p,ul,h2 {
+             text-align: left; /* Setze den Text linksbündig */
+             line-height:25px;
+        }
+        img {
+            border-radius: 15px;
+        }
+        #progress-bar {
+            height: 5px;
+            background-color: #008CBA;
+            border-radius: 15px;
+        }
+        #progress-barBG {
+            width: 100%; 
+            background-color: #ddd;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Aufgaben zum Kennenlernen der Plattform IDOVIR</h1>
+
+    <!-- Begrüßungsseite -->
+    <div id="welcome">
+        <p style="max-width: 600px;line-height:30px">
+            <b>Herzlich willkommen zum Usertest!</b><br><br>
+            Mit der Dokumentations-Anwendung IDOVIR kann man sich bestehende, 
+            dokumentierte Projekte anschauen und neue dokumentieren.<br> 
+            Dieser Nutzertest dient dazu, diese Funktonen zu testen. 
+            Sie sollen ein bestehendes Projekt ansehen und ein neues anlegen.<br>  
+            Für den ganze Eingabe haben wir ca. <i>14 Minuten</i> veranschlagt. 
+            Mit der Bedienung der Schaltfläche "Weiter" kommen Sie zur nächsten Aufgabe.  
+            Zum Schluss folgt eine Nutzerumfrage, die ungefähr <i>15 Minuten.</i> dauern wird.</p>
+
+        <p style="max-width: 600px;line-height:30px"> 
+            <b>Anleitung zur Ausführung der Aufgaben:</b>
+            Unter dem <a href="https://1drv.ms/f/s!Akozq1SO-yKliT-jOWvgvw-HQX9T?e=GWh5g3" target="_blank">Link</a>
+            kommen Sie zum Cloud-Ordner, wo alle Bilder abgelegt sind, 
+            die Sie für die folgenden Aufgaben brauchen werden (siehe Abbildung unten). 
+            Bitte laden Sie diesen Ordner lokal auf Ihren Rechner runter, 
+            um später damit arbeiten zu können. 
+            <b><i>Sobald Sie die Aufgaben beendet haben, 
+                löschen Sie bitte die runtergeladenen Dateien von Ihrer Festplatte. 
+                Die Weiterverwendung der Bilder ist strengstens untersagt.</i></b> </p>
+        <img src="Cloud-Ordner_fuer_Nutzertest.png" alt="Cloud-Ordner-Beispiel" width="500" height="auto">
+        <br> <br> 
+        <button id="start-btn" onclick="startTest()">Los geht's!</button>
+    </div>
+
+    <!-- Aufgabe 1 -->
+    <div class="task" id="task1" style="display: none;">
+        <h2>Aufgabe 1: Erstes Kennenlernen</h2>
+        <p>Schritt 1: Schauen Sie sich ein beliebiges Projekt auf der Seite 
+            <a href="https://idovir.com/" target="_blank">IDOVIR</a> an,
+            um die Struktur des Systems etwas kennenzulernen. </p>
+        <p>Schritt 2: Jetzt öffnen Sie im neuen Tab die Seite <a href="https://staging.idovir.com/" target="_blank">IDOVIR-Staging</a>. 
+            Loggen Sie sich mit den Nutzerdaten, die Ihnen in der E-Mail mitgeteilt wurden. </p>
+        <button id="back-btn" onclick="previousTask(1)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(1)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 7%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <!-- Aufgabe 2 -->
+    <div class="task" id="task2" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Die Inhalte, mit denen Sie das neue Projekt befüllen, 
+            stellen wir Ihnen hier als <span style="color:orange">Text</span> (für Copy und Paste) 
+            bereit und die Bilder finden Sie im Ordner, 
+            den Sie runtergeladen hatten</p>
+        <button id="back-btn" onclick="previousTask(2)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(2)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 14%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task3" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Schritt 1: Gehen Sie zur Projektübersicht und legen Sie ein neues Projekt an:	
+            <ul>
+                <li>Projekttitel: <span style="color:orange">Tell Halaf</span></li>
+                <li>Primäre Sprache: <span style="color:orange">Deutsch</span></li>
+                <li>Sekundäre Sprache: <span style="color:orange">Englisch</span></li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(3)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(3)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 21%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task4" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Schritt 2: Laden Sie mich (Elze) zum Projekt als Mitwirkende ein. 
+            Dafür geben Sie die folgenden Daten an:	
+            <ul>
+                <li>E-Mail: <span style="color:orange">elze.tomasiunaite@stud.htw-dresden.de</span></li>
+                <li>Rolle: <span style="color:orange">Ansprechpartner</span></li>
+                <li>Institution: <span style="color:orange">HTW Dresden</span></li>
+                <li>Berechtigung: <span style="color:orange">Admin</span></li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(4)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(4)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 28%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task5" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Schritt 3: Fügen Sie ein paar Informationen zum Objekt <i>Tell Halaf</i> hinzu:	
+            <ul>
+                <li>Laden Sie das Vorschau-Bild <i><b>Tell_Halaf</b></i> hoch 
+                    (das Bild finden Sie unter dem Namen <i>Tell_Halaf</i> in dem Cloud-Ordner)</li>
+                <li>Fügen Sie die Geokoordinaten ein (Namen im Suchfeld eingeben)</li>
+                <li>Fügen Sie die folgende Projektbeschreibung hinzu – (per Copy und Paste einfügen): 
+                    <span style="color:orange">Virtuelle Rekonstruktion des aramäischen Westpalastes 
+                    und des assyrischen Nordostpalast von Tell Halaf im heutigen Syrien.</span></li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(5)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(5)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 35%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task6" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Schritt 4: Legen Sie die folgende Gliederung in der Projektstruktur an, 
+            die eine Unterteilung des Tell Halafs in kleinere Segmente darstellen soll 
+            (Sie werden nur ein Bruchteil vom Tell Halaf anlegen). 
+            Die folgenden Strukturelemente sollten rein 
+            (Einrückungen deuten auf hierarchische Zugehörigkeit):	
+            <ul style="color:orange; list-style-type: none;">
+                <li>Außen</li>
+                <li style="padding-left: 30px;">Mauern Oberer Abschluss</li>
+                <li style="padding-left: 30px;">Türme</li>
+                <li>Innen</li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(6)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(6)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 42%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task7" style="display: none;">
+        <h2>Aufgabe 2: Ein ähnliches Projekt anlegen</h2>
+        <p>Schritt 5: Zum Schluss befüllen Sie die Bilderdatenbanken <i>Quellenübersicht</i> 
+            und <i>Rekonstruktionen</i> im IDOVIR mit Bildern von Quellen und Rekonstruktionen, 
+            die sie später brauchen werden. 
+            Die Bilder finden Sie in den jeweiligen Unterordnern im von Ihnen runtergeladenen Cloud-Ordner.
+        </p>
+        <button id="back-btn" onclick="previousTask(7)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(7)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 49%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+     <!-- Aufgabe 3 -->
+
+     <div class="task" id="task8" style="display: none;">
+        <h2>Aufgabe 3: Strukturelemente mit Inhalten befüllen</h2>
+        <p>Schritt 1: Gehen Sie zum Element <i>Mauern Oberer Abschluss</i>. 
+            Benennen Sie die aktuelle Variante in der Sie sich befinden <span style="color:orange">Hoch</span>.
+        </p>
+        <button id="back-btn" onclick="previousTask(8)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(8)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 56%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task9" style="display: none;">
+        <h2>Aufgabe 3: Strukturelemente mit Inhalten befüllen</h2>
+        <p>Schritt 2: Laden sie folgende Bilder an entsprechenden Positionen hoch 
+            (wählen Sie die Bilder aus, die Sie in Punkt 2. hochgeladen haben):
+            <ul>
+                <li>Rekonstruktion: <i><b>R Mauer Oberer Abschluss HOCH</b></i></li>
+                <li>Quelle: <i><b>Q Mauern Oberer Abschluss</b></i></li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(9)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(9)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 63%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task10" style="display: none;">
+        <h2>Aufgabe 3: Strukturelemente mit Inhalten befüllen</h2>
+        <p>Schritt 3: Fügen Sie den folgenden Argumentationstext ein:
+            <span style="color:orange">
+                Reliefs und Wandmalereien zeigen bei Zinnen teils einfache Abtreppungen 
+                (zwei Steigungen, ein Zwischenabsatz), oft aber auch zweifache, 
+                die Zinnensteine des Postaments vor dem West-Palast sogar dreifache.</span>.
+        </p>
+        <button id="back-btn" onclick="previousTask(10)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(10)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 70%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task11" style="display: none;">
+        <h2>Aufgabe 3: Strukturelemente mit Inhalten befüllen</h2>
+        <p>Schritt 4: Erstellen Sie in dem gleichen Strukturelement (<i>Mauern Oberer Abschluss</i>) 
+            eine weitere Variante und benennen Sie sie  <span style="color:orange">Niedrig</span> 
+            und laden sie nur das Bild <i><b>R Mauer Oberer Abschluss NIEDRIG</b></i> hoch.
+        </p>
+        <button id="back-btn" onclick="previousTask(11)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(11)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 77%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <div class="task" id="task12" style="display: none;">
+        <h2>Aufgabe 3: Strukturelemente mit Inhalten befüllen</h2>
+        <p>Schritt 5: Zum Schluss teilen Sie mit mir diese zweite Variante, 
+            die sie erstellt haben, über eine in IDOVIR vorhandene Teilen-Funktion:
+            <ul>
+                <li>Mein Name: <span style="color:orange">Elze</span></li>
+                <li>E-Mail: <span style="color:orange">elze.tomasiunaite@stud.htw-dresden.de</span></li>
+            </ul>
+        </p>
+        <button id="back-btn" onclick="previousTask(12)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(12)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 84%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <!-- Aufgabe 4 -->
+    <div class="task" id="task13" style="display: none;">
+        <h2>Aufgabe 4: Zum Schluss kommentieren Sie noch Ihr erstes Projekt</h2>
+        <p>Dafür gehen Sie auf einen beliebigen Gliederungspunkt 
+            und fügen einen beliebigen Kommentar für mich ein 😊
+        </p>
+        <button id="back-btn" onclick="previousTask(13)">Zurück</button>
+        <button id="next-btn" onclick="nextTask(13)">Weiter</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 91%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+     <!-- Abschlusseite, Danksagung -->
+    <div class="task" id="task14" style="display: none;">
+        <h2>Sie haben die Aufgaben geschafft!</h2>
+        <p>Jetzt bitte ich Sie, den <b>wichtigsten Teil</b> dieser Übung zu erfüllen: 
+            Geben Sie Ihre Bewertung zur Nutzung von IDOVIR in der <b>Umfrage 
+            zu der Benutzeroberfläche von IDOVIR</b> ab. Dafür gehen Sie bitte auf 
+            <a href="https://forms.gle/aXKVcsTXmt6PSJor5" target="_blank">Link zur Umfrage</a> 
+            und beantworten Sie die Fragen.<br><br>
+            Vielen Dank für Ihre Mitarbeit!
+
+        </p>
+        <button id="back-btn" onclick="previousTask(14)">Zurück</button>
+
+        <div id="progress-barBG"> <!-- der graue BG der Process-bar -->
+            <div id="progress-bar" style= "width: 100%;"></div> <!-- der blaue Balken der Process-Bar-->
+        </div>
+    </div>
+
+    <script>
+        let currentTask = 0; // Starte mit 0, um die Willkommensseite anzuzeigen
+
+        function startTest() {
+            showTask(1); // Starte mit Aufgabe 1
+        }
+
+        function nextTask(current) {
+            currentTask = current + 1;
+            showTask(currentTask);
+        }
+
+        function previousTask(current) {
+            currentTask = current - 1;
+            showTask(currentTask);
+        }
+
+        function showTask(taskNumber) {
+            const tasks = document.querySelectorAll('.task');
+            tasks.forEach(task => {
+                task.style.display = 'none';
+            });
+
+            const currentTaskElement = document.querySelector(`#task${taskNumber}`);
+            if (currentTaskElement) {
+                currentTaskElement.style.display = 'block';
+            }
+
+            // Willkommensseite anzeigen, wenn zurück zur Startseite gegangen wird
+            if (taskNumber === 0) {
+                document.getElementById('welcome').style.display = 'block';
+            } else {
+                document.getElementById('welcome').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
